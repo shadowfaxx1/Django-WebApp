@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" type = "text/css" href="{% static 'app/main.css' %}">
+</head>
+<body class="flex flex-col min-h-screen font-sans antialiased" style="background-color: #F4EEFF;">
+
+    <!-- Navigation Bar -->
+    <nav class="p-4 text-white flex justify-between" style="background-color: #424874;">
+        <div>
+            <h1 class="text-3xl font-bold font-sans transition duration-300 ease-in-out transform hover:scale-105">SendMeABlog</h1>
+        </div>
+        <div class="flex-1">
+            <div class="p-4 text-left font-semibold space-x-2 ">
+                <a href="/" class="rounded-lg text-white hover:bg-black transition duration-300 ease-in-out transform hover:scale-105">Home</a>
+                <a href="/about" class="rounded-lg text-white hover:bg-black transition duration-300 ease-in-out transform hover:scale-105">About</a>
+            </div>
+        </div>
+        <div class="flex space-x-4 p-4">
+            <a href="#" class=" rounded-lg  text-white hover:bg-black transition duration-300 ease-in-out transform hover:scale-105">New Post</a>
+            <a href="#" class="rounded-lg  text-white hover:bg-black transition duration-300 ease-in-out transform hover:scale-105">{{ user.username }}</a>
+            <a href="Logout" class=" rounded-lg text-white hover:bg-black transition duration-300 ease-in-out transform hover:scale-105">Logout</a>
+        </div>
+        
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-2 px-4 sm:px-0 flex">
+        <section class="w-3/4">
+        {% for post in posts %}
+
+            <article class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md tranistion duration-300  transform hover:scale-105 flex flex-col ml-19">
+                <!-- Header Block -->
+                 
+                <header class="p-4 flex justify-between space-x-1">
+                    <a href="#"><h2 class="font-bold font-sans" style="color: #424874; font-size: 1.2rem;">{{post.author}}</h2></a>
+                    <time class="italic text-sm font-sans" style="color: #424874;">{{post.date|date:"F d, Y"}}</time>
+                </header>
+                <!-- Content -->
+                <p>{{post.content}}</p>
+                
+            </article>
+            <br>
+            {% endfor %}
+
+        </section>
+        
+
+        <!-- Sidebar -->
+        <aside class="w-1/4 ml-4">
+            <div class="bg-white p-6 rounded-lg shadow-md overflow-hidden">
+                <h2 class="font-bold font-sans mb-4" style="color: #424874;">Sidebar Box</h2>
+                <p> You can add any content here, such as links, ads, or additional information.</p>
+                <div class="overflow-hidden">
+                    <ul class="text-opacity-75 font-light font-sans">
+                        <a href="#">
+                            <li class="border-b-2 border-blue-200 py-2">Latest Posts</li>
+                        </a>
+                        <a href="#">
+                            <li class="border-b-2 border-blue-200 py-2">Announcements</li>
+                        </a>
+                        <a href="#">
+                            <li class="border-b-2 border-blue-200 py-2">Calendars</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </main>
+    
+</body>
+</html>

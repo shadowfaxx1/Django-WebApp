@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+
+    <!-- Navigation Bar -->
+    <nav class="p-4 text-white flex justify-between" style="background-color: #424874;">
+        <div>
+            <h1 class="text-3xl font-bold font-sans transition duration-300 ease-in-out transform hover:scale-105">SendMeABlog</h1>
+        </div>
+        <div class="flex-1">
+            <div class="p-4 text-left font-semibold space-x-2 ">
+                <a href="/" class="rounded-lg text-white hover:bg-black transition duration-300 ease-in-out transform hover:scale-105">Home</a>
+                <a href="/about" class="rounded-lg text-white hover:bg-black transition duration-300 ease-in-out transform hover:scale-105">About</a>
+            </div>
+        </div>
+        <div class="flex space-x-4 p-4">
+            <a href="/signup" class=" rounded-lg text-white hover:bg-black transition duration-300 ease-in-out transform hover:scale-105">Signup</a>
+        </div>
+        
+    </nav>
+
+<!-- Main content -->
+<div class="flex items-center justify-center h-screen">
+    <main class="container mx-auto mt-2 sm:px-0 flex">
+
+        <!-- Main Section -->
+        <section class="w-3/4">
+            <div class="bg-white p-8 shadow-md rounded-lg max-w-md w-full">
+                {% block content %} {% endblock %}
+            </div>
+        </section>
+
+        <!-- Sidebar Section -->
+        <aside class="w-1/4 ml-4">
+            <div class="bg-white p-6 rounded-lg shadow-md overflow-hidden">
+                <h2 class="font-bold font-sans mb-4" style="color: #424874;">Sidebar Box</h2>
+                <p>You can add any content here, such as links, ads, or additional information.</p>
+                <div class="overflow-hidden">
+                    <ul class="text-opacity-75 font-light font-sans">
+                        <a href="#">
+                            <li class="border-b-2 border-blue-200 py-2">Latest Posts</li>
+                        </a>
+                        <a href="#">
+                            <li class="border-b-2 border-blue-200 py-2">Announcements</li>
+                        </a>
+                        <a href="#">
+                            <li class="border-b-2 border-blue-200 py-2">Calendars</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+</div>
+
+</main>
+
+   
+
+</body>
+</html>
