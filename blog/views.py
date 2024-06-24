@@ -57,3 +57,6 @@ from django.views.decorators.csrf import csrf_exempt
 def user_about(request):
     print('3')
     return render(request,'about.html',{'error message': '<h1> Page Error </h1>'})
+
+
+#added reddit api support to generate auto blog use genai to create intersting blogs 
