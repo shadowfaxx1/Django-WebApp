@@ -55,7 +55,6 @@ from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
 def user_about(request):
-    print('3')
     return render(request,'about.html',{'error message': '<h1> Page Error </h1>'})
 
 

@@ -7,22 +7,19 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 font-sans antialiased">
-
-    <!-- Navigation Bar -->
-    <nav class="p-4 text-white flex justify-between" style="background-color: #424874;">
+    <nav class="p-4 text-white flex items-center justify-between" style="background-color: #424874;">
         <div>
-            <h1 class="text-3xl font-bold font-sans transition duration-300 ease-in-out transform hover:scale-105">SendMeABlog</h1>
+            <a href="{% url 'blog-home' %}"> <h1 class="text-3xl font-bold transition duration-300 ease-in-out transform hover:scale-105">SendMeABlog</h1></a>
         </div>
-        <div class="flex-1">
-            <div class="p-4 text-left font-semibold space-x-2 ">
-                <a href="/" class="rounded-lg text-white hover:bg-black transition duration-300 ease-in-out transform hover:scale-105">Home</a>
-                <a href="/about" class="rounded-lg text-white hover:bg-black transition duration-300 ease-in-out transform hover:scale-105">About</a>
+        <div class="flex-1 text-left">
+            <div class="font-semibold space-x-4">
+                <a href="/" class="px-3 py-2 rounded-lg text-white hover:bg-gray-700 transition duration-300 ease-in-out transform hover:scale-105">Home</a>
+                <a href="/about" class="px-2 py-2 rounded-lg text-white hover:bg-gray-700 transition duration-300 ease-in-out transform hover:scale-105">About</a>
             </div>
         </div>
-        <div class="flex space-x-4 p-4">
-            <a href="/signup" class=" rounded-lg text-white hover:bg-black transition duration-300 ease-in-out transform hover:scale-105">Signup</a>
+        <div class="flex space-x-4 font-semibold">
+            <a href="/Signup" class="px-3 py-2 rounded-lg text-white hover:bg-gray-700 transition duration-300 ease-in-out transform hover:scale-105">Login</a>
         </div>
-        
     </nav>
 
 <!-- Main content -->
